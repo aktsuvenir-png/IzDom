@@ -1,0 +1,258 @@
+</style>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <!-- Пока используем изображение книги (символическое) -->
+                <img src="https://via.placeholder.com/150x50/8b7a62/ffffff?text=Книга" alt="Логотип издательства">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#books">Книги</a></li>
+                    <li><a href="#authors">Авторы</a></li>
+                    <li><a href="#merch">Сувениры</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                    <li><a href="#cooperation">Сотрудничество</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Главная (баннер) -->
+    <section id="home" class="hero">
+        <h1>Издательство</h1>
+        <p style="font-size: 1.5rem; margin-top: 20px; color: #f0e2d0;">Открываем новые горизонты</p>
+    </section>
+
+    <!-- О нас -->
+    <section id="about">
+        <div class="container">
+            <h2>О нас</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>Кто мы такие</h3>
+                    <p>Молодое, амбициозное издательство, объединяющее талантливых авторов и художников. Мы создаём книги, которые вдохновляют, обучают и дарят эстетическое удовольствие. Наша команда — профессионалы с многолетним опытом в издательском деле.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Почему мы этим занимаемся</h3>
+                    <p>Мы верим, что качественная литература меняет мир к лучшему. Наша миссия — поддерживать авторов, чьи идеи resonируют с современностью, и дарить читателям незабываемые впечатления от каждой страницы.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Книги -->
+    <section id="books">
+        <div class="container">
+            <h2>Книги</h2>
+            <div class="books-grid">
+                <!-- Карточка книги 1 -->
+                <div class="book-card">
+                    <div class="book-cover">
+                        <div class="placeholder-cover">Обложка книги 1</div>
+                    </div>
+                    <div class="book-info">
+                        <h3>Название книги 1</h3>
+                        <p class="book-annotation">Краткая аннотация: захватывающий роман о любви и приключениях.</p>
+                        <div class="book-prices">
+                            <div class="price-item"><span>ч/б, мягкая обл.</span> <span>350 ₽</span></div>
+                            <div class="price-item"><span>цветная, мягкая</span> <span>550 ₽</span></div>
+                            <div class="price-item"><span>твёрдая обложка</span> <span>750 ₽</span></div>
+                            <div class="price-item"><span>аудиокнига</span> <span>300 ₽</span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Карточка книги 2 -->
+                <div class="book-card">
+                    <div class="book-cover">
+                        <div class="placeholder-cover">Обложка книги 2</div>
+                    </div>
+                    <div class="book-info">
+                        <h3>Название книги 2</h3>
+                        <p class="book-annotation">Сборник рассказов современных авторов о городской жизни.</p>
+                        <div class="book-prices">
+                            <div class="price-item"><span>ч/б, мягкая обл.</span> <span>400 ₽</span></div>
+                            <div class="price-item"><span>цветная, мягкая</span> <span>600 ₽</span></div>
+                            <div class="price-item"><span>твёрдая обложка</span> <span>800 ₽</span></div>
+                            <div class="price-item"><span>аудиокнига</span> <span>350 ₽</span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Карточка книги 3 -->
+                <div class="book-card">
+                    <div class="book-cover">
+                        <div class="placeholder-cover">Обложка книги 3</div>
+                    </div>
+                    <div class="book-info">
+                        <h3>Название книги 3</h3>
+                        <p class="book-annotation">Практическое руководство по графическому дизайну.</p>
+                        <div class="book-prices">
+                            <div class="price-item"><span>ч/б, мягкая обл.</span> <span>500 ₽</span></div>
+                            <div class="price-item"><span>цветная, мягкая</span> <span>750 ₽</span></div>
+                            <div class="price-item"><span>твёрдая обложка</span> <span>950 ₽</span></div>
+                            <div class="price-item"><span>аудиокнига</span> <span>400 ₽</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Авторы -->
+    <section id="authors">
+        <div class="container">
+            <h2>Авторы</h2>
+            <div class="authors-grid">
+                <div class="author-card">
+                    <div class="author-photo">
+                        <div class="placeholder-author">Фото</div>
+                    </div>
+                    <h3 class="author-name">Иван Петров</h3>
+                    <p class="author-bio">Современная проза, детективы. Автор 10 книг, лауреат премии "Новый горизонт".</p>
+                </div>
+                <div class="author-card">
+                    <div class="author-photo">
+                        <div class="placeholder-author">Фото</div>
+                    </div>
+                    <h3 class="author-name">Елена Смирнова</h3>
+                    <p class="author-bio">Поэзия, эссе. Публиковалась в журналах, работает над книгой о городских легендах.</p>
+                </div>
+                <div class="author-card">
+                    <div class="author-photo">
+                        <div class="placeholder-author">Фото</div>
+                    </div>
+                    <h3 class="author-name">Алексей Новиков</h3>
+                    <p class="author-bio">Фантастика, young adult. Популярен среди молодёжи, ведёт блог о писательстве.</p>
+                </div>
+                <div class="author-card">
+                    <div class="author-photo">
+                        <div class="placeholder-author">Фото</div>
+                    </div>
+                    <h3 class="author-name">Мария Иванова</h3>
+                    <p class="author-bio">Нон-фикшн, психология. Кандидат наук, автор бестселлера "Сила привычки".</p>
+                </div>
+            </div>
+            <!-- Позже здесь будет ссылка "все авторы" или реализован переход на отдельные страницы -->
+        </div>
+    </section>
+
+    <!-- Сувениры -->
+    <section id="merch">
+        <div class="container">
+            <h2>Сувениры и услуги</h2>
+            <div class="merch-grid">
+                <div class="merch-card">
+                    <div class="merch-image" style="background: #d9c8b2;"></div>
+                    <h3 class="merch-title">Кружка с иллюстрацией из книги</h3>
+                    <p class="merch-description">Керамическая кружка с авторским принтом. 300 ₽</p>
+                </div>
+                <div class="merch-card">
+                    <div class="merch-image" style="background: #d9c8b2;"></div>
+                    <h3 class="merch-title">Шоппер с цитатой</h3>
+                    <p class="merch-description">Экосумка с любимой фразой из книги. 450 ₽</p>
+                </div>
+                <div class="merch-card">
+                    <div class="merch-image" style="background: #d9c8b2;"></div>
+                    <h3 class="merch-title">Разработка мерча для вашей книги</h3>
+                    <p class="merch-description">Индивидуальный дизайн сувенирной продукции под ключ. от 5000 ₽</p>
+                </div>
+                <div class="merch-card">
+                    <div class="merch-image" style="background: #d9c8b2;"></div>
+                    <h3 class="merch-title">Закладки для книг</h3>
+                    <p class="merch-description">Набор из 5 дизайнов с иллюстрациями. 150 ₽</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты + доставка -->
+    <section id="contact">
+        <div class="container">
+            <h2>Контакты и доставка</h2>
+            <div class="contact-delivery">
+                <div class="contact-info">
+                    <p><i>📍</i> г. Москва, ул. Книжная, д. 10, офис 5</p>
+                    <p><i>📞</i> +7 (123) 456-78-90</p>
+                    <p><i>📧</i> info@izdatelstvo.ru</p>
+                    <p><i>📱</i> Telegram: @izdatelstvo_bot</p>
+                    <p><i>📘</i> ВКонтакте: vk.com/izdatelstvo</p>
+                    <div class="delivery-note">
+                        Доставка по всей России — от 3 до 7 дней. Бесплатно при заказе от 1500 ₽.
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 20px;">Напишите нам</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Сообщение"></textarea>
+                        </div>
+                        <button type="submit">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Сотрудничество -->
+    <section id="cooperation">
+        <div class="container">
+            <h2>Сотрудничество</h2>
+            <div class="cooperation-grid">
+                <div class="cooperation-item">
+                    <h3>Вакансии</h3>
+                    <ul>
+                        <li><strong>Редактор</strong> (опыт работы от 2 лет)</li>
+                        <li><strong>Менеджер по работе с авторами</strong> (активные коммуникации)</li>
+                        <li><strong>Верстальщик</strong> (знание InDesign)</li>
+                        <li><strong>Маркетолог</strong> (продвижение книг)</li>
+                    </ul>
+                    <p style="margin-top: 20px;">Резюме присылайте на hr@izdatelstvo.ru</p>
+                </div>
+                <div class="cooperation-item">
+                    <h3>Рукописи</h3>
+                    <p>Мы открыты для новых авторов! Рассматриваем произведения в жанрах:</p>
+                    <ul>
+                        <li>Художественная литература (проза, поэзия)</li>
+                        <li>Нон-фикшн (психология, саморазвитие, история)</li>
+                        <li>Детская литература</li>
+                        <li>Фантастика и фэнтези</li>
+                    </ul>
+                    <p style="margin-top: 20px;">Присылайте синопсис и несколько глав на manuscript@izdatelstvo.ru. Срок рассмотрения — до 2 месяцев.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Издательство. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Плавная прокрутка к якорям (небольшой JS) -->
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

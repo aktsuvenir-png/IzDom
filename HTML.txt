@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Издательство</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #faf3e8; /* светлый бежевый */
+            color: #4a3b2c; /* тёмно-коричневый */
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Контейнер для ограничения ширины */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Шапка */
+        header {
+            background-color: #fff9f0; /* чуть светлее основного */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            border-radius: 5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: #5e4b34;
+            transition: color 0.3s;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            color: #2f6b4d; /* зелёный акцент */
+        }
+
+        /* Баннер */
+        .hero {
+            background: linear-gradient(135deg, #d9c8b2 0%, #b99e82 100%);
+            color: #fff;
+            text-align: center;
+            padding: 120px 20px;
+            width: 100%;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 300;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* Общие секции */
+        section {
+            padding: 70px 0;
+        }
+
+        section:nth-child(even) {
+            background-color: #f5ede1; /* чуть темнее основного */
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+            color: #6b4f33;
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #2f6b4d; /* зелёный */
+            margin: 15px auto 0;
+        }
+
+        /* О нас: две колонки */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .about-card {
+            background-color: #fff;
+            padding: 35px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(107, 79, 51, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .about-card h3 {
+            font-size: 1.8rem;
+            color: #4f3f2f;
+            margin-bottom: 20px;
+            border-left: 5px solid #2f6b4d;
+            padding-left: 15px;
+        }
+
+        .about-card p {
+            color: #5c4c3a;
+        }
+
+        /* Книги */
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 35px;
+            margin-top: 40px;
+        }
+
+        .book-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-card:hover {
+            box-shadow: 0 15px 30px rgba(47, 107, 77, 0.15);
+        }
+
+        .book-cover {
+            aspect-ratio: 3 / 4;
+            background-color: #d9c8b2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #5e4b34;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .book-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-annotation {
+            font-size: 0.95rem;
+            margin: 10px 0;
+            color: #4f3f2f;
+            flex-grow: 1;
+        }
+
+        .book-prices {
+            margin-top: 15px;
+            border-top: 1px dashed #d9c8b2;
+            padding-top: 15px;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            margin-bottom: 7px;
+            color: #4f3f2f;
+        }
+
+        .price-item span:first-child {
+            font-weight: 500;
+        }
+
+        .price-item span:last-child {
+            font-weight: bold;
+            color: #2f6b4d;
+        }
+
+        /* Авторы */
+        .authors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 35px;
+        }
+
+        .author-card {
+            background: #fff;
+            border-radius: 50px 50px 20px 20px;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .author-photo {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background-color: #b99e82;
+            border-radius: 50%;
+            margin: 20px auto 15px;
+            max-width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .author-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .author-name {
+            font-size: 1.3rem;
+            color: #4f3f2f;
+            margin-bottom: 10px;
+        }
+
+        .author-bio {
+            font-size: 0.9rem;
+            color: #5c4c3a;
+            padding: 0 15px;
+        }
+
+        /* Сувениры */
+        .merch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .merch-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .merch-card:hover {
+            transform: scale(1.03);
+        }
+
+        .merch-image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background-color: #d9c8b2;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .merch-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #4f3f2f;
+        }
+
+        .merch-description {
+            font-size: 0.9rem;
+            color: #5c4c3a;
+        }
+
+        /* Контакты + доставка */
+        .contact-delivery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .contact-info p {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-info i {
+            color: #2f6b4d;
+            width: 20px;
+        }
+
+        .delivery-note {
+            background-color: #2f6b4d; /* зелёный */
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact-form {
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #d9c8b2;
+            border-radius: 30px;
+            font-family: inherit;
+            background-color: #faf3e8;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        button {
+            background-color: #2f6b4d;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #1f4b35;
+        }
+
+        /* Сотрудничество */
+        .cooperation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .cooperation-item {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(107, 79, 51, 0.1);
+        }
+
+        .cooperation-item h3 {
+            font-size: 1.8rem;
+            color: #4f3f2f;
+            margin-bottom: 20px;
+            border-left: 5px solid #2f6b4d;
+            padding-left: 15px;
+        }
+
+        .cooperation-item ul {
+            list-style: none;
+        }
+
+        .cooperation-item li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .cooperation-item li:before {
+            content: "●";
+            color: #2f6b4d;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Подвал */
+        footer {
+            background-color: #5e4b34;
+            color: #f0e2d0;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-grid,
+            .contact-delivery,
+            .cooperation-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Временные изображения */
+        .placeholder-cover {
+            background: linear-gradient(145deg, #b99e82, #8b7a62);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .placeholder-author {
+            background: linear-gradient(145deg, #b99e82, #8b7a62);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
